@@ -1,8 +1,6 @@
-version: '3.8'
-
 services:
   kong:
-    image: kong:3.5-alpine
+    image: kong:3.9.1-ubuntu
     environment:
       KONG_DATABASE: "off"
       KONG_PROXY_ACCESS_LOG: /dev/stdout
