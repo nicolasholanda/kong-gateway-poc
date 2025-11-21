@@ -7,6 +7,10 @@ services:
       - name: api-route
         paths:
           - /api
+    plugins:
+      - name: rate-limiting
+        config:
+          minute: 10
 
   - name: auth-service
     url: http://auth-service:8081
@@ -14,3 +18,7 @@ services:
       - name: auth-route
         paths:
           - /auth
+    plugins:
+      - name: rate-limiting
+        config:
+          minute: 10
