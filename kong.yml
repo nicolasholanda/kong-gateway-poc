@@ -16,6 +16,12 @@ services:
           key_names:
             - apikey
           hide_credentials: true
+      - name: circuit-breaker
+        config:
+          failure_threshold: 50
+          success_threshold: 2
+          timeout: 60
+          half_open_limit: 5
 
   - name: auth-service
     url: http://auth-service:8081
@@ -27,3 +33,9 @@ services:
       - name: rate-limiting
         config:
           minute: 10
+      - name: circuit-breaker
+        config:
+          failure_threshold: 50
+          success_threshold: 2
+          timeout: 60
+          half_open_limit: 5
