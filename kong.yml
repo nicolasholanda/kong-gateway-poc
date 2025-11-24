@@ -11,6 +11,11 @@ services:
       - name: rate-limiting
         config:
           minute: 10
+      - name: key-auth
+        config:
+          key_names:
+            - apikey
+          hide_credentials: true
 
   - name: auth-service
     url: http://auth-service:8081
